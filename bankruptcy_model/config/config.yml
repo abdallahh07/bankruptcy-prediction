@@ -1,0 +1,23 @@
+package_name: bankruptcy_model
+
+pipeline_name: lgbm_pipeline
+pipeline_save_file: lgbm_pipeline.pkl
+
+data_file: data/data.csv
+random_state: 42
+test_size: 0.2
+
+target: "Bankrupt?"
+
+drop_features:
+  - " Net Income Flag"
+
+model_params:
+  class_weight: balanced
+  n_jobs: -1
+  random_state: 42
+  verbose: -1
+  max_depth: 7
+  num_leaves: 31
+  min_child_samples: 50
+  learning_rate: 0.05
